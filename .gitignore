@@ -1,0 +1,6 @@
+.vs/
+packages/
+*.user
+*.pubxml
+GradeAnalysis/bin/
+GradeAnalysis/obj/
