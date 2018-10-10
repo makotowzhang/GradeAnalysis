@@ -28,162 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MenuTab = new System.Windows.Forms.TabControl();
-            this.StudentTab = new System.Windows.Forms.TabPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.StudentTop = new System.Windows.Forms.GroupBox();
-            this.StudentDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.StudentEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.StudentAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.StuNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.StuName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MenuTab.SuspendLayout();
-            this.StudentTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.StudentTop.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.BaseDataPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.MdiTab = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MdiTab)).BeginInit();
             this.SuspendLayout();
             // 
-            // MenuTab
+            // ribbonControl1
             // 
-            this.MenuTab.Controls.Add(this.StudentTab);
-            this.MenuTab.Controls.Add(this.tabPage2);
-            this.MenuTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuTab.Location = new System.Drawing.Point(0, 0);
-            this.MenuTab.Name = "MenuTab";
-            this.MenuTab.SelectedIndex = 0;
-            this.MenuTab.Size = new System.Drawing.Size(778, 538);
-            this.MenuTab.TabIndex = 0;
+            this.ribbonControl1.DrawGroupCaptions = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.BaseDataPage});
+            this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.Size = new System.Drawing.Size(824, 128);
+            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
-            // StudentTab
+            // barButtonItem1
             // 
-            this.StudentTab.Controls.Add(this.gridControl1);
-            this.StudentTab.Controls.Add(this.StudentTop);
-            this.StudentTab.Location = new System.Drawing.Point(4, 23);
-            this.StudentTab.Name = "StudentTab";
-            this.StudentTab.Padding = new System.Windows.Forms.Padding(3);
-            this.StudentTab.Size = new System.Drawing.Size(770, 511);
-            this.StudentTab.TabIndex = 0;
-            this.StudentTab.Text = "学生管理";
-            this.StudentTab.UseVisualStyleBackColor = true;
+            this.barButtonItem1.Caption = "学生管理";
+            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
-            // gridControl1
+            // BaseDataPage
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 55);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(764, 453);
-            this.gridControl1.TabIndex = 1;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.BaseDataPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.BaseDataPage.Name = "BaseDataPage";
+            this.BaseDataPage.Text = "基础数据";
             // 
-            // gridView1
+            // ribbonPageGroup1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.StuNo,
-            this.StuName});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
-            // StudentTop
+            // ribbonStatusBar1
             // 
-            this.StudentTop.Controls.Add(this.StudentDelete);
-            this.StudentTop.Controls.Add(this.StudentEdit);
-            this.StudentTop.Controls.Add(this.StudentAdd);
-            this.StudentTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.StudentTop.Location = new System.Drawing.Point(3, 3);
-            this.StudentTop.Name = "StudentTop";
-            this.StudentTop.Size = new System.Drawing.Size(764, 52);
-            this.StudentTop.TabIndex = 0;
-            this.StudentTop.TabStop = false;
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 547);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(824, 31);
             // 
-            // StudentDelete
+            // ribbonPage2
             // 
-            this.StudentDelete.Location = new System.Drawing.Point(222, 21);
-            this.StudentDelete.Name = "StudentDelete";
-            this.StudentDelete.Size = new System.Drawing.Size(75, 23);
-            this.StudentDelete.TabIndex = 2;
-            this.StudentDelete.Text = "删除";
-            this.StudentDelete.Click += new System.EventHandler(this.StudentDelete_Click);
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // StudentEdit
+            // MdiTab
             // 
-            this.StudentEdit.Location = new System.Drawing.Point(118, 21);
-            this.StudentEdit.Name = "StudentEdit";
-            this.StudentEdit.Size = new System.Drawing.Size(75, 23);
-            this.StudentEdit.TabIndex = 1;
-            this.StudentEdit.Text = "修改";
-            this.StudentEdit.Click += new System.EventHandler(this.StudentEdit_Click);
+            this.MdiTab.MdiParent = this;
             // 
-            // StudentAdd
+            // barButtonItem2
             // 
-            this.StudentAdd.Location = new System.Drawing.Point(15, 21);
-            this.StudentAdd.Name = "StudentAdd";
-            this.StudentAdd.Size = new System.Drawing.Size(75, 23);
-            this.StudentAdd.TabIndex = 0;
-            this.StudentAdd.Text = "新增";
-            this.StudentAdd.Click += new System.EventHandler(this.StudentAdd_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 23);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(770, 511);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // StuNo
-            // 
-            this.StuNo.Caption = "学号";
-            this.StuNo.FieldName = "StuNo";
-            this.StuNo.Name = "StuNo";
-            this.StuNo.Visible = true;
-            this.StuNo.VisibleIndex = 0;
-            // 
-            // StuName
-            // 
-            this.StuName.Caption = "姓名";
-            this.StuName.FieldName = "Name";
-            this.StuName.Name = "StuName";
-            this.StuName.Visible = true;
-            this.StuName.VisibleIndex = 1;
+            this.barButtonItem2.Caption = "考试管理";
+            this.barButtonItem2.Id = 2;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 538);
-            this.Controls.Add(this.MenuTab);
+            this.ClientSize = new System.Drawing.Size(824, 578);
+            this.Controls.Add(this.ribbonStatusBar1);
+            this.Controls.Add(this.ribbonControl1);
+            this.IsMdiContainer = true;
             this.Name = "MainForm";
-            this.Text = "Main";
+            this.Ribbon = this.ribbonControl1;
+            this.StatusBar = this.ribbonStatusBar1;
+            this.Text = "成绩分析";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.MenuTab.ResumeLayout(false);
-            this.StudentTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.StudentTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MdiTab)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl MenuTab;
-        private System.Windows.Forms.TabPage StudentTab;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.GroupBox StudentTop;
-        private System.Windows.Forms.TabPage tabPage2;
-        private DevExpress.XtraEditors.SimpleButton StudentDelete;
-        private DevExpress.XtraEditors.SimpleButton StudentEdit;
-        private DevExpress.XtraEditors.SimpleButton StudentAdd;
-        private DevExpress.XtraGrid.Columns.GridColumn StuNo;
-        private DevExpress.XtraGrid.Columns.GridColumn StuName;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage BaseDataPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager MdiTab;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

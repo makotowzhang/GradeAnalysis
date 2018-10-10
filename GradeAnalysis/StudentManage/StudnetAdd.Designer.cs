@@ -1,4 +1,4 @@
-﻿namespace GradeAnalysis
+﻿namespace GradeAnalysis.StudentManage
 {
     partial class StudentAdd
     {

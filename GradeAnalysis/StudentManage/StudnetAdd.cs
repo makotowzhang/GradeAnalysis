@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using GradeAnalysis.Model;
 
-namespace GradeAnalysis
+namespace GradeAnalysis.StudentManage
 {
     public partial class StudentAdd : DevExpress.XtraEditors.XtraForm
     {

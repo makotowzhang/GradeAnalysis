@@ -15,6 +15,7 @@ namespace GradeAnalysis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-CN");
             Application.Run(new MainForm());
         }
     }

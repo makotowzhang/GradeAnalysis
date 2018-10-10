@@ -60,6 +60,7 @@
             this.TxtSort.Name = "TxtSort";
             this.TxtSort.Size = new System.Drawing.Size(100, 20);
             this.TxtSort.TabIndex = 1;
+            this.TxtSort.EditValueChanged += new System.EventHandler(this.TxtSort_EditValueChanged);
             // 
             // TxtTitle
             // 
@@ -148,7 +149,7 @@
             this.Controls.Add(this.TxtSort);
             this.Controls.Add(this.LabelSort);
             this.Name = "SubjectControl";
-            this.Size = new System.Drawing.Size(585, 136);
+            this.Size = new System.Drawing.Size(579, 136);
             ((System.ComponentModel.ISupportInitialize)(this.TxtSort.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGrade.Properties)).EndInit();

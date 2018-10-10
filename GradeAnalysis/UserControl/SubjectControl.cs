@@ -34,6 +34,11 @@ namespace GradeAnalysis.UserControl
             CbbType.Properties.Items.Add(new SubjectTypeCcb { Text = "客观题", Value = SubjectType.Subjective });
             CbbType.Properties.Items.Add(new SubjectTypeCcb { Text = "主观题", Value = SubjectType.Objective });
         }
+
+        private void TxtSort_EditValueChanged(object sender, EventArgs e)
+        {
+            SubjectItem.Sort = int.Parse(e.ToString());
+        }
     }
 
     public class SubjectTypeCcb
