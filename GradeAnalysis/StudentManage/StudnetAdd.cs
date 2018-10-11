@@ -25,7 +25,7 @@ namespace GradeAnalysis.StudentManage
             student = st;
             txtStuNo.Text = st.StuNo.ToString();
             txtStuName.Text = st.Name;
-            txtStuNo.Enabled = false;
+            Text = "编辑学生";
         }
 
         private void BtnSave_Click(object sender, EventArgs e)

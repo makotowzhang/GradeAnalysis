@@ -41,6 +41,8 @@
             // 
             this.txtStuNo.Location = new System.Drawing.Point(112, 33);
             this.txtStuNo.Name = "txtStuNo";
+            this.txtStuNo.Properties.Mask.EditMask = "[0-9]*";
+            this.txtStuNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtStuNo.Size = new System.Drawing.Size(100, 20);
             this.txtStuNo.TabIndex = 0;
             // 
@@ -76,7 +78,7 @@
             this.BtnSave.Text = "确定";
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // StudnetAdd
+            // StudentAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,8 +88,8 @@
             this.Controls.Add(this.LabelStuName);
             this.Controls.Add(this.LabelStuNo);
             this.Controls.Add(this.txtStuNo);
-            this.Name = "StudnetAdd";
-            this.Text = "StudnetAdd";
+            this.Name = "StudentAdd";
+            this.Text = "新增学生";
             ((System.ComponentModel.ISupportInitialize)(this.txtStuNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStuName.Properties)).EndInit();
             this.ResumeLayout(false);

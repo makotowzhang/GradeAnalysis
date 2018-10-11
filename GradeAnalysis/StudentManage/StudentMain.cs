@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using GradeAnalysis.Model;
+using GradeAnalysis.Entity;
 
 namespace GradeAnalysis.StudentManage
 {
@@ -39,23 +40,28 @@ namespace GradeAnalysis.StudentManage
             if (addForm.ShowDialog() == DialogResult.OK)
             {
                 var stu = addForm.student;
-                stu.Id = Guid.NewGuid();
-                studentsList.Add(addForm.student);
-                studentsList = studentsList.OrderBy(m => m.StuNo).ToList();
+                stu.Id = Guid.NewGuid().ToString();
+                using (DataProvider dp = new DataProvider())
+                {
+                    dp.Student.Add(addForm.student);
+                    dp.SaveChanges();
+                }
             }
             addForm.Dispose();
-            JsonDataHelper.SaveJsonData(studentsList, studentJsonSource);
             GridLoadData();
         }
 
         private void StudentMain_Load(object sender, EventArgs e)
         {
-            studentsList = JsonDataHelper.GetJsonData<List<Student>>(studentJsonSource);
             GridLoadData();
         }
 
         private void GridLoadData()
         {
+            using (DataProvider dp = new DataProvider())
+            {
+                studentsList = dp.Student.OrderBy(m=>m.StuNo).ToList();
+            }
             GridControl.DataSource = studentsList;
             GridControl.RefreshDataSource();
         }
@@ -70,12 +76,17 @@ namespace GradeAnalysis.StudentManage
             var addForm = new StudentAdd((Student)DataGrid.GetRow(DataGrid.GetSelectedRows()[0]))
             {
                 StartPosition = FormStartPosition.CenterParent
-            }; ;
+            }; 
             if (addForm.ShowDialog() == DialogResult.OK)
             {
-                studentsList.FirstOrDefault(m => m.Id == addForm.student.Id).Name = addForm.student.Name;
-                addForm.Dispose();
-                JsonDataHelper.SaveJsonData(studentsList, studentJsonSource);
+                using (DataProvider dp = new DataProvider())
+                {
+                    Student entity = dp.Student.FirstOrDefault(m => m.Id == addForm.student.Id);
+                    entity.StuNo = addForm.student.StuNo;
+                    entity.Name = addForm.student.Name;
+                    dp.SaveChanges();
+                }
+                 addForm.Dispose();
                 GridLoadData();
             }
         }
